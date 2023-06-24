@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EfCoreCrudFormApplication.Migrations
 {
     [DbContext(typeof(FCContext))]
-    [Migration("20230623105210_mig1")]
-    partial class mig1
+    [Migration("20230624144036_mig2")]
+    partial class mig2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

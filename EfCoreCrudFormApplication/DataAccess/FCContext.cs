@@ -8,15 +8,17 @@ using System.Threading.Tasks;
 
 namespace EfCoreCrudFormApplication.DataAccess
 {
-    public class FCContext :DbContext
+    public class FCContext : DbContext
     {
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-           // BaseCon(optionsBuilder);
+            BaseCon(optionsBuilder);
 
 
-            WorkCon(optionsBuilder);
+            // WorkCon(optionsBuilder);
 
 
         }
@@ -25,16 +27,18 @@ namespace EfCoreCrudFormApplication.DataAccess
         {
             //base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer
-      ("Server=SELIMBAYINDIR\\ARCHITECTURE;Database=ddd;User Id=sa;Password=Perkon123456; TrustServerCertificate=True;");
+       ("Server=SELIMBAYINDIR\\ARCHITECTURE;Database=BaseFormDb;User Id=sa;Password=Perkon123456; TrustServerCertificate=True;");
         }
 
         private static void WorkCon(DbContextOptionsBuilder optionsBuilder)
         {
             //base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer
-      ("Server=SELIM-BAYINDIR\\BYNDR;Database=sa;User Id=sa;Password=Perkon123456; TrustServerCertificate=True;");
+       ("Server=SELIM-BAYINDIR\\BYNDR;Database=sa;User Id=sa;Password=Perkon123456; TrustServerCertificate=True;");
         }
 
-        public DbSet<Person> People{ get; set; }
+
+
+        public DbSet<Person> People { get; set; }
     }
 }

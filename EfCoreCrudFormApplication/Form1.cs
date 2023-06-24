@@ -8,16 +8,13 @@ using System.Xml.Linq;
 namespace EfCoreCrudFormApplication
 {
     public partial class Form1 : Form
-    {
-        private FCContext _context;
-
+    {   
+          private FCContext _context;
         public Form1()
         {
             InitializeComponent();
             _context = new FCContext();
         }
-
-
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -144,6 +141,21 @@ namespace EfCoreCrudFormApplication
             //_context.SaveChanges(); RefreshDataGrid();
 
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //var personNumber = _context.People.Max(p => p.Id);
+            //personNumber++;
+            //textBox3.Text = personNumber.ToString();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+                 var personNumber = _context.People.Max(p => p.Id);
+            personNumber++;
+            textBox3.Text = personNumber.ToString();
         }
     }
 }
