@@ -14,5 +14,6 @@ namespace EfCoreCrudFormApplication.Entity
         public int Id { get; set; }
         public string PersonName { get; set; }
         public string PersonLastName { get; set; }
+        //deneme
     }
 }
