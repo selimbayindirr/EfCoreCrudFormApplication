@@ -12,11 +12,29 @@ namespace EfCoreCrudFormApplication.DataAccess
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //base.OnConfiguring(optionsBuilder);
-          optionsBuilder.UseSqlServer
-    ("Server=SELIMBAYINDIR\\ARCHITECTURE;Database=ddd;User Id=sa;Password=Perkon123456; TrustServerCertificate=True;");
-   
+
+           // BaseCon(optionsBuilder);
+
+
+            WorkCon(optionsBuilder);
+
+
         }
+
+        private static void BaseCon(DbContextOptionsBuilder optionsBuilder)
+        {
+            //base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer
+      ("Server=SELIMBAYINDIR\\ARCHITECTURE;Database=ddd;User Id=sa;Password=Perkon123456; TrustServerCertificate=True;");
+        }
+
+        private static void WorkCon(DbContextOptionsBuilder optionsBuilder)
+        {
+            //base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer
+      ("Server=SELIM-BAYINDIR\\BYNDR;Database=sa;User Id=sa;Password=Perkon123456; TrustServerCertificate=True;");
+        }
+
         public DbSet<Person> People{ get; set; }
     }
 }
